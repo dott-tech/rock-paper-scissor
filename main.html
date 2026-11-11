@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0f0a24">
+    <title>rock paper scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <div class="game-container">
+    <header class="game-header">
+      <div>
+        <p class="game-title">rock paper scissors</p>
+        <p class="game-subtitle">choose your move</p>
+      </div>
+      <span class="badge">vs cpu</span>
+    </header>
+
+    <div class="btns">
+      <button class="move-btn" data-move="rock" onclick="playerplay = 'rock';
+        compuerplay = computermove(); playerMoveRock(); updateScore();">
+        <img src="./icons8-fist-100.png" alt="">
+        <p class="choices">rock</p>
+      </button>
+
+      <button class="move-btn" data-move="paper" onclick="playerplay = 'paper';
+        compuerplay = computermove(); playerMovePaper(); updateScore();">
+        <img src="./icons8-so-so-100.png" alt="">
+        <p class="choices">paper</p>
+      </button>
+
+      <button class="move-btn" data-move="scissors" onclick="playerplay = 'scissors';
+        compuerplay = computermove(); playerMoveScissors(); updateScore();">
+        <img src="./icons8-hand-scissors-100.png" alt="">
+        <p class="choices">scissors</p>
+      </button>
+    </div>
+
+    <div class="arena">
+      <div class="fighter">
+        <span class="fighter-label">you</span>
+        <div class="fighter-slot js-player-slot"><span class="placeholder">?</span></div>
+      </div>
+      <span class="versus">vs</span>
+      <div class="fighter">
+        <span class="fighter-label">cpu</span>
+        <div class="fighter-slot js-cpu-slot"><span class="placeholder">?</span></div>
+      </div>
+    </div>
+
+    <p class="js-result">make a move to start</p>
+
+    <div class="js-score score-board">
+      <div class="stat stat-win"><span class="stat-num js-wins">0</span><span class="stat-label">wins</span></div>
+      <div class="stat stat-tie"><span class="stat-num js-ties">0</span><span class="stat-label">ties</span></div>
+      <div class="stat stat-loss"><span class="stat-num js-losses">0</span><span class="stat-label">losses</span></div>
+    </div>
+
+    <button class="reset-btn" onclick="resetScore();">reset score</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
